@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 @Table(name = "todos")
 public class Todo {
     @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Column
@@ -20,7 +20,7 @@ public class Todo {
     
     @Column
     @Nullable
-    private String desc;
+    private String description;
 
     @Column
     private boolean isDone;
@@ -34,7 +34,7 @@ public class Todo {
     }
 
     public String getDesc() {
-        return desc;
+        return description;
     }
 
     public boolean isDone() {
@@ -46,7 +46,7 @@ public class Todo {
     }
 
     public void setDesc(String desc) {
-        this.desc = desc;
+        this.description = description;
     }
 
     public void setDone(boolean isDone) {
