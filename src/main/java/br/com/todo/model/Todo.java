@@ -23,6 +23,9 @@ public class Todo {
     private String description;
 
     @Column
+    private Integer prioridade;
+
+    @Column
     private boolean isDone;
 
     public Long getId() {
@@ -41,11 +44,19 @@ public class Todo {
         return isDone;
     }
 
+    public void setPrioridade(Integer prioridade){
+        this.prioridade = prioridade;
+    }
+
+    public Integer getPrioridade(){
+        return prioridade;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public void setDesc(String desc) {
+    public void setDesc(String descripition) {
         this.description = description;
     }
 
