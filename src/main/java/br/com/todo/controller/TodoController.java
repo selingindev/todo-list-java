@@ -2,6 +2,7 @@ package br.com.todo.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import br.com.todo.service.TodoService;
 
 @RestController
 @RequestMapping("/todos")
+@CrossOrigin(origins = "http://localhost:3000")
 public class TodoController {
     private TodoService todoService;
     public TodoController(TodoService todoService){
@@ -37,9 +39,15 @@ public class TodoController {
         return todoService.update(todo);   
     }
 
-    @DeleteMapping("{id}")
+    @GetMapping("/{id}")
+    Todo findById(@PathVariable("id") Long id){
+        return todoService.findById(id);   
+    }
+
+    @DeleteMapping("/{id}")
     List<Todo> delete(@PathVariable("id") Long id){
         return todoService.delete(id);   
     }
     
+   
 }
