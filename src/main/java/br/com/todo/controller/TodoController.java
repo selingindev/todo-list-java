@@ -34,8 +34,8 @@ public class TodoController {
         return todoService.list();   
     }
 
-    @PutMapping
-    List<Todo> update(@RequestBody Todo todo){
+    @PutMapping("/{id}")
+    List<Todo> update( @RequestBody Todo todo ){
         return todoService.update(todo);   
     }
 
