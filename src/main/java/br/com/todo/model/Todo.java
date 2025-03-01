@@ -56,7 +56,7 @@ public class Todo {
         this.title = title;
     }
 
-    public void setDesc(String descripition) {
+    public void setDesc(String description) {
         this.description = description;
     }
 
